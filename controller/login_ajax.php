@@ -19,6 +19,7 @@
 					$user_list=pg_fetch_array($res);
 					$_SESSION['id']=$user_list[0];
 					$_SESSION['username']=$user_list[1];
+					$message_error='login efetuado com sucesso.';
 				else:
 					$message_error='Falha no acesso, por favor, tente novamente.';
 				endif;

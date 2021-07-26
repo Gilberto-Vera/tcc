@@ -1,7 +1,7 @@
 -- -----------------------------------------------------
 -- Table "pessoa"
 -- -----------------------------------------------------
-CREATE TABLE "pessoa" (
+CREATE TABLE IF NOT EXISTS "pessoa" (
   "id" SERIAL NOT NULL,
   "nome" VARCHAR(100) NOT NULL,
   "senha" VARCHAR(45) NOT NULL,
@@ -9,12 +9,12 @@ CREATE TABLE "pessoa" (
   PRIMARY KEY ("id"))
 ;
 
-CREATE UNIQUE INDEX "email_UNIQUE1" ON "pessoa" ("email" ASC);
+CREATE UNIQUE INDEX IF NOT EXISTS "email_UNIQUE1" ON "pessoa" ("email" ASC);
 
 -- -----------------------------------------------------
 -- Table "administrador"
 -- -----------------------------------------------------
-CREATE TABLE "administrador" (
+CREATE TABLE IF NOT EXISTS "administrador" (
   "id" SERIAL NOT NULL,
   "pessoa_id" INT NOT NULL,
   PRIMARY KEY ("id"),
@@ -27,7 +27,7 @@ CREATE TABLE "administrador" (
 -- -----------------------------------------------------
 -- Table "cliente"
 -- -----------------------------------------------------
-CREATE TABLE "cliente" (
+CREATE TABLE IF NOT EXISTS "cliente" (
   "id" SERIAL NOT NULL,
   "pessoa_id" INT NOT NULL,
   "endereco" VARCHAR(100) NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE "cliente" (
 -- -----------------------------------------------------
 -- Table "evento"
 -- -----------------------------------------------------
-CREATE TABLE "evento" (
+CREATE TABLE IF NOT EXISTS "evento" (
   "id" SERIAL NOT NULL,
   "nome" VARCHAR(45) NOT NULL,
   "data" TIMESTAMP NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE "evento" (
 -- -----------------------------------------------------
 -- Table "cliente_evento"
 -- -----------------------------------------------------
-CREATE TABLE "cliente_evento" (
+CREATE TABLE IF NOT EXISTS "cliente_evento" (
   "id" SERIAL NOT NULL,
   "cliente_id" INT NOT NULL,
   "evento_id" INT NOT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE "cliente_evento" (
 -- -----------------------------------------------------
 -- Table "convidado"
 -- -----------------------------------------------------
-CREATE TABLE "convidado" (
+CREATE TABLE IF NOT EXISTS "convidado" (
   "id" SERIAL NOT NULL,
   "nome" VARCHAR(45) NOT NULL,
   "num_acompanhantes" INT NOT NULL,
@@ -79,12 +79,12 @@ CREATE TABLE "convidado" (
   PRIMARY KEY ("id"))
 ;
 
-CREATE UNIQUE INDEX "email_UNIQUE2" ON "convidado" ("email" ASC);
+CREATE UNIQUE INDEX IF NOT EXISTS "email_UNIQUE2" ON "convidado" ("email" ASC);
 
 -- -----------------------------------------------------
 -- Table "convidado_evento"
 -- -----------------------------------------------------
-CREATE TABLE "convidado_evento" (
+CREATE TABLE IF NOT EXISTS "convidado_evento" (
   "id" SERIAL NOT NULL,
   "evento_id" INT NOT NULL,
   "convidado_id" INT NOT NULL,
@@ -102,7 +102,7 @@ CREATE TABLE "convidado_evento" (
 -- -----------------------------------------------------
 -- Table "fornecedor"
 -- -----------------------------------------------------
-CREATE TABLE "fornecedor" (
+CREATE TABLE IF NOT EXISTS "fornecedor" (
   "id" SERIAL NOT NULL,
   "cnpj" VARCHAR(18) NULL,
   "razao_social" VARCHAR(100) NULL,
@@ -113,14 +113,14 @@ CREATE TABLE "fornecedor" (
   PRIMARY KEY ("id"))
 ;
 
-CREATE UNIQUE INDEX "cnpj_UNIQUE" ON "fornecedor" ("cnpj" ASC);
-CREATE UNIQUE INDEX "email_UNIQUE3" ON "fornecedor" ("email" ASC);
+CREATE UNIQUE INDEX IF NOT EXISTS "cnpj_UNIQUE" ON "fornecedor" ("cnpj" ASC);
+CREATE UNIQUE INDEX IF NOT EXISTS "email_UNIQUE3" ON "fornecedor" ("email" ASC);
 
 
 -- -----------------------------------------------------
 -- Table "log"
 -- -----------------------------------------------------
-CREATE TABLE "log" (
+CREATE TABLE IF NOT EXISTS "log" (
   "id" SERIAL NOT NULL,
   "usuario" VARCHAR(45) NOT NULL,
   "data" TIMESTAMP NOT NULL,
@@ -132,7 +132,7 @@ CREATE TABLE "log" (
 -- -----------------------------------------------------
 -- Table "modelo_roteiro"
 -- -----------------------------------------------------
-CREATE TABLE "modelo_roteiro" (
+CREATE TABLE IF NOT EXISTS "modelo_roteiro" (
   "id" SERIAL NOT NULL,
   "nome" VARCHAR(45) NOT NULL,
   "horario" VARCHAR(15) NULL,
@@ -143,7 +143,7 @@ CREATE TABLE "modelo_roteiro" (
 -- -----------------------------------------------------
 -- Table "modelo_sequencia"
 -- -----------------------------------------------------
-CREATE TABLE "modelo_sequencia" (
+CREATE TABLE IF NOT EXISTS "modelo_sequencia" (
   "id" SERIAL NOT NULL,
   "modelo_roteiro_id" INT NOT NULL,
   "descricao" VARCHAR(45) NOT NULL,
@@ -155,12 +155,12 @@ CREATE TABLE "modelo_sequencia" (
       REFERENCES "modelo_roteiro" ("id"))
 ;
 
-CREATE UNIQUE INDEX "ordem_UNIQUE1" ON "modelo_sequencia" ("ordem" ASC);
+CREATE UNIQUE INDEX IF NOT EXISTS "ordem_UNIQUE1" ON "modelo_sequencia" ("ordem" ASC);
 
 -- -----------------------------------------------------
 -- Table "servico"
 -- -----------------------------------------------------
-CREATE TABLE "servico" (
+CREATE TABLE IF NOT EXISTS "servico" (
   "id" SERIAL NOT NULL,
   "servico" VARCHAR(40) NOT NULL,
   PRIMARY KEY ("id"))
@@ -170,7 +170,7 @@ CREATE TABLE "servico" (
 -- -----------------------------------------------------
 -- Table "parceiro"
 -- -----------------------------------------------------
-CREATE TABLE "parceiro" (
+CREATE TABLE IF NOT EXISTS "parceiro" (
   "id" SERIAL NOT NULL,
   "evento_id" INT NOT NULL,
   "fornecedor_id" INT NOT NULL,
@@ -193,7 +193,7 @@ CREATE TABLE "parceiro" (
 -- -----------------------------------------------------
 -- Table "roteiro"
 -- -----------------------------------------------------
-CREATE TABLE "roteiro" (
+CREATE TABLE IF NOT EXISTS "roteiro" (
   "id" SERIAL NOT NULL,
   "evento_id" INT NOT NULL,
   "nome" VARCHAR(45) NOT NULL,
@@ -209,7 +209,7 @@ CREATE TABLE "roteiro" (
 -- -----------------------------------------------------
 -- Table "sequencia"
 -- -----------------------------------------------------
-CREATE TABLE "sequencia" (
+CREATE TABLE IF NOT EXISTS "sequencia" (
   "id" SERIAL NOT NULL,
   "roteiro_id" INT NOT NULL,
   "descricao" VARCHAR(45) NOT NULL,
@@ -221,13 +221,13 @@ CREATE TABLE "sequencia" (
       REFERENCES "roteiro" ("id"))
 ;
 
-CREATE UNIQUE INDEX "ordem_UNIQUE2" ON "sequencia" ("ordem" ASC);
+CREATE UNIQUE INDEX IF NOT EXISTS "ordem_UNIQUE2" ON "sequencia" ("ordem" ASC);
 
 
 -- -----------------------------------------------------
 -- Table "servico_fornecedor"
 -- -----------------------------------------------------
-CREATE TABLE "servico_fornecedor" (
+CREATE TABLE IF NOT EXISTS "servico_fornecedor" (
   "id" SERIAL NOT NULL,
   "fornecedor_id" INT NOT NULL,
   "servico_id" INT NOT NULL,
@@ -245,7 +245,7 @@ CREATE TABLE "servico_fornecedor" (
 -- -----------------------------------------------------
 -- Table "situacao"
 -- -----------------------------------------------------
-CREATE TABLE "situacao" (
+CREATE TABLE IF NOT EXISTS "situacao" (
   "id" SERIAL NOT NULL,
   "evento_id" INT NOT NULL,
   "nome" VARCHAR(45) NOT NULL,
@@ -260,7 +260,7 @@ CREATE TABLE "situacao" (
 -- -----------------------------------------------------
 -- Table "telefone_convidado"
 -- -----------------------------------------------------
-CREATE TABLE "telefone_convidado" (
+CREATE TABLE IF NOT EXISTS "telefone_convidado" (
   "id" SERIAL NOT NULL,
   "convidado_id" INT NOT NULL,
   "telefone" VARCHAR(14) NOT NULL,
@@ -275,7 +275,7 @@ CREATE TABLE "telefone_convidado" (
 -- -----------------------------------------------------
 -- Table "telefone_fornecedor"
 -- -----------------------------------------------------
-CREATE TABLE "telefone_fornecedor" (
+CREATE TABLE IF NOT EXISTS "telefone_fornecedor" (
   "id" SERIAL NOT NULL,
   "fornecedor_id" INT NOT NULL,
   "descricao" VARCHAR(45) NULL,
@@ -291,7 +291,7 @@ CREATE TABLE "telefone_fornecedor" (
 -- -----------------------------------------------------
 -- Table "telefone_pessoa"
 -- -----------------------------------------------------
-CREATE TABLE "telefone_pessoa" (
+CREATE TABLE IF NOT EXISTS "telefone_pessoa" (
   "id" SERIAL NOT NULL,
   "pessoa_id" INT NOT NULL,
   "telefone" VARCHAR(14) NOT NULL,
@@ -307,7 +307,7 @@ CREATE TABLE "telefone_pessoa" (
 -- -----------------------------------------------------
 -- Table "usuario"
 -- -----------------------------------------------------
-CREATE TABLE "usuario" (
+CREATE TABLE IF NOT EXISTS "usuario" (
   "id" SERIAL NOT NULL,
   "pessoa_id" INT NOT NULL,
   "funcao" VARCHAR(45) NULL,
@@ -321,7 +321,7 @@ CREATE TABLE "usuario" (
 -- -----------------------------------------------------
 -- Table "usuario_evento"
 -- -----------------------------------------------------
-CREATE TABLE "usuario_evento" (
+CREATE TABLE IF NOT EXISTS "usuario_evento" (
   "id" SERIAL NOT NULL,
   "usuario_id" INT NOT NULL,
   "evento_id" INT NOT NULL,
@@ -334,34 +334,43 @@ CREATE TABLE "usuario_evento" (
       REFERENCES "evento" ("id"))
 ;
 
--- -----------------------------------------------------
--- Insert "administrador"
--- -----------------------------------------------------
-INSERT INTO pessoa (id, nome, senha, email)
-  VALUES (default, 'admin', 'admin', 'admin@admin')
-;
+CREATE OR REPLACE FUNCTION inserir_dados() RETURNS void AS
+$$
+BEGIN
+  IF (SELECT COUNT(*) FROM pessoa) = 0 THEN
+    -- -----------------------------------------------------
+    -- Insert "administrador"
+    -- -----------------------------------------------------
+    INSERT INTO pessoa (id, nome, senha, email)
+      VALUES (default, 'admin', 'admin', 'admin@admin');
 
-INSERT INTO administrador (id, pessoa_id)
-  VALUES (default, 1)
-;
+    INSERT INTO administrador (id, pessoa_id)
+      VALUES (default, 1);
+  END IF;
 
--- -----------------------------------------------------
--- Insert "situacao"
--- -----------------------------------------------------
+  IF (SELECT COUNT(*) FROM evento) = 0 THEN
+    -- -----------------------------------------------------
+    -- Insert "evento"
+    -- -----------------------------------------------------
+    INSERT INTO evento (id, nome, data, num_convidados)
+      VALUES (default, 'Inicial', '1979-03-28 23:57:02', 1);
+  END IF;
 
-INSERT INTO evento (id, nome, data, num_convidados)
-  VALUES (default, 'Inical', '1979-03-28 23:57:02', 1)
-;
+  IF (SELECT COUNT(*) FROM situacao) = 0 THEN
+    -- -----------------------------------------------------
+    -- Insert "situacao"
+    -- -----------------------------------------------------
+    INSERT INTO situacao (id, evento_id, nome, Observacao)
+      VALUES (default, 1, 'Iniciado', ''),
+        (default, 1, 'Confirmado', ''),
+        (default, 1, 'Finalizado', ''),
+        (default, 1, 'Bloqueado', ''),
+        (default, 1, 'Cancelado', '')
+    ;
+  END IF;
+END
+$$ LANGUAGE plpgsql;
 
+SELECT inserir_dados();
 
--- -----------------------------------------------------
--- Insert "situacao"
--- -----------------------------------------------------
-
-INSERT INTO situacao (id, evento_id, nome, Observacao)
-  VALUES (default, 1, 'Iniciado', ''),
-    (default, 1, 'Confirmado', ''),
-    (default, 1, 'Finalizado', ''),
-    (default, 1, 'Bloqueado', ''),
-    (default, 1, 'Cancelado', '')
-;
+DROP FUNCTION inserir_dados;

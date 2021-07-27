@@ -1,5 +1,5 @@
 <?php
-    include('view/head.php');
+    include('view/head/head.php');
 ?>
 
     <main class="form-signin">

@@ -1,5 +1,5 @@
 <?php
-    include('view/head/headLogin.php');
+    include('view/head/headLogin.html');
 ?>
 
     <main class="form-signin">
@@ -29,5 +29,5 @@
     </main>
 
     <?php
-      include("view/imports/importLogin.php");
+      include("view/imports/importLogin.html");
     ?>

@@ -1,5 +1,5 @@
 <?php 
-  include("view/head/headSidebar.php");
+  include("view/head/headSidebar.html");
 ?>
 <?php
     include("view/sidebar/sidebar.php");
@@ -13,9 +13,9 @@
         </div>
 
     <?php
-        include("view/footer/footer.php");
+        include("view/footer/footer.html");
     ?>
 
 <?php
-  include("view/imports/import.php");
+  include("view/imports/import.html");
 ?>

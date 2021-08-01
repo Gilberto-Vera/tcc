@@ -1,73 +1,112 @@
-<!doctype html>
-<html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    
-    <link href="css/sidebars.css" rel="stylesheet">
-  </head>
-  <body>
+<div id="wrapper">
+  <ul class="navbar-nav bg-gradient-light sidebar sidebar-black accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+          <img class="mb-1" src="image/ring.png" width="45" height="50"><br>
+          <div class="sidebar-brand-text mx-3">SGCC</div>
+      </a>
 
-  <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-    <a href="#" class="d-flex align-items-center justify-content-md-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-      <img class="mb-4" src="image/ring.png" width="50" height="72"><br>
-      <!-- <span class="fs-5 fw-semibold">SGCC</span> -->
-    </a>
-    <ul class="list-unstyled ps-0">
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-          Cliente
-        </button>
-        <div class="collapse" id="home-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Cadastro</a></li>
-            <li><a href="#" class="link-dark rounded">Lista</a></li>
-          </ul>
-        </div>
+      <hr class="sidebar-divider my-0">
+
+      <li class="nav-item">
+          <a class="nav-link" href="#">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Painel de Controle</span>
+          </a>
       </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-          Evento
-        </button>
-        <div class="collapse" id="dashboard-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Cadastro</a></li>
-            <li><a href="#" class="link-dark rounded">Lista</a></li>
-            <li><a href="#" class="link-dark rounded">Convidados</a></li>
-          </ul>
-        </div>
+
+      <hr class="sidebar-divider">
+
+      <div class="sidebar-heading">
+          Interface
+      </div>
+
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              <i class="fas fa-fw fa-users"></i>
+              <span>Cliente</span>
+          </a>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+                  <a class="collapse-item" href="#">Cadastro</a>
+                  <a class="collapse-item" href="#">Lista</a>
+              </div>
+          </div>
       </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          Fornecedor
-        </button>
-        <div class="collapse" id="orders-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Cadastro</a></li>
-            <li><a href="#" class="link-dark rounded">Lista</a></li>
-          </ul>
-        </div>
+
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+              aria-expanded="true" aria-controls="collapseTwo">
+              <i class="fas fa-fw fa-thumbtack"></i>
+              <span>Evento</span>
+          </a>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+              data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+                  <a class="collapse-item" href="#">Cadastro</a>
+                  <a class="collapse-item" href="#">Lista</a>
+                  <a class="collapse-item" href="#">Convidados</a>
+              </div>
+          </div>
       </li>
-      <li class="border-top my-3"></li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-          Conta
-        </button>
-        <div class="collapse" id="account-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Cadastro</a></li>
-            <li><a href="#" class="link-dark rounded">Perfil</a></li>
-            <li><a href="#" class="link-dark rounded">Configurações</a></li>
-            <li><a href="index.php?control=logout" class="link-dark rounded">Sair</a></li>
-          </ul>
-        </div>
+
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+              aria-expanded="true" aria-controls="collapseThree">
+              <i class="fas fa-fw fa-dolly"></i>
+              <span>Fornecedor</span>
+          </a>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+              data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+                  <a class="collapse-item" href="#">Cadastro</a>
+                  <a class="collapse-item" href="#">Lista</a>
+              </div>
+          </div>
       </li>
-    </ul>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/sidebars.js"></script>
-</body>
-</html>
+
+      <hr class="sidebar-divider">
+
+      <div class="sidebar-heading">
+          Acesso
+      </div>
+
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+            aria-expanded="true" aria-controls="collapsePages">
+              <i class="fas fa-fw fa-user-alt"></i>
+              <span>Conta</span>
+          </a>
+          <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
+              data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+                  <h6 class="collapse-header"><?= $_SESSION['username'];?></h6>
+                  <a class="collapse-item" href="#">Perfil</a>
+                  <a class="collapse-item" href="#">Configurações</a>
+                  <a class="collapse-item" href="index.php?control=logout">
+                    <i class="fas fa-fw fa-sign-in-alt"></i>
+                    <span>Sair</span></a>
+              </div>
+          </div>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" href="#">
+              <i class="fas fa-fw fa-chart-area"></i>
+              <span>Gráficos</span></a>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" href="#">
+              <i class="fas fa-fw fa-table"></i>
+              <span>Tabelas</span></a>
+      </li>
+
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+  </ul>

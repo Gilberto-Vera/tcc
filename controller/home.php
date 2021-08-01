@@ -1,3 +1,3 @@
 <?php
-    include('view/sidebar/sidebar.php');
+    include('view/content/dashboard.php');
 ?>

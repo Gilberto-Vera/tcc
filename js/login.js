@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$("#login").click(function(){
 		var username=$('#username').val();
 		var password=$('#password').val();
-		//console.log(username,password);
+		// console.log(username,password);
 		//debugger;
 		$.ajax({
 			type:"POST",
@@ -11,7 +11,7 @@ $(document).ready(function(){
 			data:{username:username,password:password},
 			success:function(response){
 				if(response.data==true){
-					window.location='index.php?control=home';
+					window.location.assign('index.php?control=dashboard');
 					// $("#cabecalho").html("Confirmação");
 					// $(".toast").addClass("bg-success");
 					// $(".toast").removeClass("toast-error");

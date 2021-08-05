@@ -1,7 +1,7 @@
 
 <div id="wrapper">
   <ul class="navbar-nav bg-gradient-light sidebar sidebar-black accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php?control=dashboard">
           <img class="mb-1" src="image/ring.png" width="45" height="50"><br>
           <div class="sidebar-brand-text mx-3">SGCC</div>
       </a>
@@ -29,7 +29,7 @@
           </a>
           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                  <a class="collapse-item" href="#">Cadastro</a>
+                  <a class="collapse-item" href="index.php?control=client">Cadastro</a>
                   <a class="collapse-item" href="#">Lista</a>
               </div>
           </div>

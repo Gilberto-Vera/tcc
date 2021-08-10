@@ -18,7 +18,7 @@ $(document).ready(function(){
 					// $(".toast-body").html(response.message);
 					// $(".toast").toast("show");
 				}else{
-					$("#cabecalho").html("Alerta");
+					// $("#cabecalho").html("Alerta");
 					$(".toast").addClass("toast-error");
 					$(".toast").removeClass("bg-success");
 					$(".toast-body").html(response.message);

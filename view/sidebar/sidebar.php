@@ -17,10 +17,6 @@
 
       <hr class="sidebar-divider">
 
-      <div class="sidebar-heading">
-          Interface
-      </div>
-
       <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
               aria-expanded="true" aria-controls="collapseOne">
@@ -67,10 +63,6 @@
       </li>
 
       <hr class="sidebar-divider">
-
-      <div class="sidebar-heading">
-          Acesso
-      </div>
 
       <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"

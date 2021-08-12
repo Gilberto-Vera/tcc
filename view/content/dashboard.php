@@ -17,5 +17,5 @@
         include("view/footer/footer.html");
     ?>
 <?php
-  include("view/imports/import.html");
+  include("view/imports/importSidebar.html");
 ?>

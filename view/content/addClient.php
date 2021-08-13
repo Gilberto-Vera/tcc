@@ -20,35 +20,35 @@
                                     </div>
                                     <form class="user" action="index.php?control=client&add" method="POST">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="nome"
+                                            <input type="text" class="form-control form-control-user" name="nome"
                                                 placeholder="Nome">
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <input type="text" class="form-control form-control-user" id="cpf"
+                                                <input type="text" class="form-control form-control-user" name="cpf"
                                                     placeholder="CPF">
                                             </div>
                                             <div class="col-sm-6">
-                                                <input type="text" class="form-control form-control-user" id="telefone"
+                                                <input type="text" class="form-control form-control-user" name="telefone"
                                                     placeholder="Telefone">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="endereco"
+                                            <input type="text" class="form-control form-control-user" name="endereco"
                                                 placeholder="Endereço">
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <input type="password" class="form-control form-control-user"
-                                                    id="senha" placeholder="Senha">
+                                                    name="senha" placeholder="Senha">
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="password" class="form-control form-control-user"
-                                                    id="confirmaSenha" placeholder="Confirmar Senha">
+                                                    name="confirmaSenha" placeholder="Confirmar Senha">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="email"
+                                            <input type="email" class="form-control form-control-user" name="email"
                                                 placeholder="Email">
                                         </div>
                                         <div class="row">
@@ -64,9 +64,6 @@
                                             </div>
                                             <div class="col text-right">
                                                 <button type="submit" class="btn btn-primary btn-user" id="submit">Salvar</button>
-                                                <!-- <a href="#" class="btn btn-primary btn-user">
-                                                    Salvar
-                                                </a> -->
                                             </div>
                                         </div>
                                     </form>

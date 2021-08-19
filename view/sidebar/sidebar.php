@@ -25,8 +25,8 @@
           </a>
           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                  <a class="collapse-item" href="index.php?control=client">Cadastro</a>
-                  <a class="collapse-item" href="#">Lista</a>
+                  <a class="collapse-item" href="index.php?control=addClient">Cadastro</a>
+                  <a class="collapse-item" href="index.php?control=listClient">Lista</a>
               </div>
           </div>
       </li>

@@ -4,8 +4,8 @@
 CREATE TABLE IF NOT EXISTS "pessoa" (
   "id" SERIAL NOT NULL,
   "nome" VARCHAR(100) NOT NULL,
-  "senha" VARCHAR(45) NOT NULL,
   "email" VARCHAR(45) NOT NULL,
+  "senha" VARCHAR(45) NOT NULL,
   PRIMARY KEY ("id"))
 ;
 
@@ -341,11 +341,37 @@ BEGIN
     -- -----------------------------------------------------
     -- Insert "administrador"
     -- -----------------------------------------------------
-    INSERT INTO pessoa (id, nome, senha, email)
-      VALUES (default, 'admin', 'admin', 'admin@admin');
+    INSERT INTO pessoa (id, nome, email, senha)
+      VALUES (default, 'admin', 'admin@admin', 'admin');
 
     INSERT INTO administrador (id, pessoa_id)
       VALUES (default, 1);
+
+    -- -----------------------------------------------------
+    -- Insert "cliente"
+    -- -----------------------------------------------------
+    INSERT INTO pessoa (id, nome, email, senha)
+      VALUES (default, 'Tiger Nixon', 'Edinburgh@seila.com', 61),
+        (default, 'Garrett Winters', 'Accountant@seila.com', 63),
+        (default, 'Ashton Cox', 'Author@seila.com', 66),
+        (default, 'Cedric Kelly', 'Developer@seila.com', 22),
+        (default, 'Airi Satou', 'Senior@seila.com', 33),
+        (default, 'Brielle Williamson', 'Williamson@seila.com', 61),
+        (default, 'Herrod Chandler', 'Chandler@seila.com', 59),
+        (default, 'Rhona Davidson', 'Davidson@seila.com', 55),
+        (default, 'Colleen Hurst', 'Hurst@seila.com', 39),
+        (default, 'Sonya Frost', 'Frost@seila.com', 23),
+        (default, 'Jena Gaines', 'Gaines@seila.com', 30),
+        (default, 'Quinn Flynn', 'Flynn@seila.com', 24),
+        (default, 'Charde Marshall', 'Marshall@seila.com', 36),
+        (default, 'Haley Kennedy', 'Kennedy@seila.com', 43),
+        (default, 'Tatyana Fitzpatrick', 'Fitzpatrick@seila.com', 19),
+        (default, 'Michael Silva', 'Silva@seila.com', 66),
+        (default, 'Paul Byrd', 'Byrd@seila.com', 64),
+        (default, 'Gloria Little', 'Little@seila.com', 59),
+        (default, 'Bradley Greer', 'Greer@seila.com', 41),
+        (default, 'Dai Rios', 'Rios@seila.com', 35)
+    ;
   END IF;
 
   IF (SELECT COUNT(*) FROM evento) = 0 THEN
@@ -353,7 +379,8 @@ BEGIN
     -- Insert "evento"
     -- -----------------------------------------------------
     INSERT INTO evento (id, nome, data, num_convidados)
-      VALUES (default, 'Inicial', '1979-03-28 23:57:02', 1);
+      VALUES (default, 'Inicial', '1979-03-28 23:57:02', 1)
+    ;
   END IF;
 
   IF (SELECT COUNT(*) FROM situacao) = 0 THEN

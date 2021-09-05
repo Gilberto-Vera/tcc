@@ -18,40 +18,39 @@
                                     <div class="card-title text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Cadastro de cliente</h1>
                                     </div>
-                                    <form class="user needs-validation" action="index.php?control=addClient&add" method="POST" novalidate>
+                                    <form class="user needs-validation" id="form" action="index.php?control=addClient&add" method="POST">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" name="nome"
-                                                placeholder="Nome" require>
-                                                <div class="invalid-feedback">
-                                                    Please provide a valid city.
-                                                </div>
+                                            <input type="text" class="form-control form-control-user" name="nome" id="name"
+                                                placeholder="Nome">
+                                                <div class="invalid-feedback" id="feedback"></div>
+                                                <div class="valid-feedback"></div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <input type="text" class="form-control form-control-user" name="cpf"
-                                                    placeholder="CPF" require>
+                                                    placeholder="CPF">
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="text" class="form-control form-control-user" name="telefone"
-                                                    placeholder="Telefone" require>
+                                                    placeholder="Telefone">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" name="endereco"
-                                                placeholder="Endereço" require>
+                                                placeholder="Endereço">
                                         </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user" name="email"
-                                                placeholder="Email" require>
+                                                placeholder="Email">
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <input type="password" class="form-control form-control-user"
-                                                    name="senha" placeholder="Senha" require>
+                                                    name="senha" placeholder="Senha">
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="password" class="form-control form-control-user"
-                                                    name="confirmaSenha" placeholder="Confirmar Senha" require>
+                                                    name="confirmaSenha" placeholder="Confirmar Senha">
                                             </div>
                                         </div>
                                         <div class="row">
@@ -66,7 +65,7 @@
                                                 </a>
                                             </div>
                                             <div class="col text-right">
-                                                <button type="submit" class="btn btn-primary btn-user" id="submit">Salvar</button>
+                                                <button type="submit" class="btn btn-primary btn-user" id="save">Salvar</button>
                                             </div>
                                         </div>
                                     </form>
@@ -77,7 +76,7 @@
                 </div>
             </div>
 
-            <script>
+            <!-- <script>
                 // Example starter JavaScript for disabling form submissions if there are invalid fields
                 (function() {
                 'use strict';
@@ -96,14 +95,14 @@
                     });
                 }, false);
                 })();
-            </script>
+            </script> -->
 
         <?php
             include("view/footer/footer.html");
         ?>
 
     <?php
-        include("view/imports/importAddClient.html");
+        // include("view/imports/importAddClient.html");
     ?>
 
 <?php

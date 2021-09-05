@@ -58,7 +58,7 @@
         return true;
     }
 
-	function valdidateName($name){
+	function validateName($name){
 		$name = validate($name);
         if (!preg_match('/^[a-zA-Z0-9\s]+$/', $name)) {
             return false;
@@ -73,4 +73,29 @@
         }
         return true;
     }
+
+	/**
+	 * A função abaixo demonstra o uso de uma expressão regular que identifica, de forma simples, telefones válidos no Brasil.
+	 * Exemplos válidos: +55 (21) 98888-8888 / 9999-9999 / 21 98888-8888 / 5511988888888 / +55 (021) 98888-8888 / 021 99995-3333
+	 *
+	 * @param string $phoneString 
+	 * @param bool $forceOnlyNumber Passar false caso não queira remover o traço "-"
+	 * @return array|null ['ddi' => 'string', 'ddd' => string , 'number' => 'string']
+	 */
+	function brazilianPhoneParser(string $phoneString, bool $forceOnlyNumber = true) : ?array{
+		$phoneString = validate($phoneString);
+		$phoneString = preg_replace('/[()]/', '', $phoneString);
+		if (preg_match('/^(?:(?:\+|00)?(55)\s?)?(?:\(?([0-0]?[0-9]{1}[0-9]{1})\)?\s?)??(?:((?:9\d|[2-9])\d{3}\-?\d{4}))$/', $phoneString, $matches) === false){
+			return null;
+		}
+
+		$ddi = $matches[1] ?? '';
+		$ddd = preg_replace('/^0/', '', $matches[2] ?? '');
+		$number = $matches[3] ?? '';
+		if ($forceOnlyNumber === true){
+			$number = preg_replace('/-/', '', $number);
+		}
+
+		return ['ddi' => $ddi, 'ddd' => $ddd , 'number' => $number];
+	}
 ?>

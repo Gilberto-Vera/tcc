@@ -5,7 +5,7 @@ $(document).ready(function(){
 		$.ajax({
 			type:"POST",
 			dataType:'json',
-			url:'index.php?control=login_ajax',
+			url:'index.php?control=loginAjax',
 			data:{username:username,password:password},
 			success:function(response){
 				if(response.data==true){

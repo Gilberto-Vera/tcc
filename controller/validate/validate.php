@@ -5,7 +5,9 @@
 
 	function validateCNPJ($cnpj){
 		$cnpj = validate($cnpj);
+
 		$cnpj = preg_replace('/[^0-9]/', '', (string) $cnpj);
+
 		if (strlen($cnpj) != 14)
 			return false;
 		if (preg_match('/(\d)\1{13}/', $cnpj))
@@ -31,27 +33,32 @@
 
 	function validateCPF($cpf) {
 		$cpf = validate($cpf);
-		$cpf = preg_replace( '/[^0-9]/is', '', $cpf );		
+
+		$cpf = preg_replace( '/[^0-9]/is', '', $cpf );
+
 		if (strlen($cpf) != 11) {
-			return 'Somente números';
+			return false;
 		}
+
 		if (preg_match('/(\d)\1{10}/', $cpf)) {
-			return 'Não pode números iguais';
+			return false;
 		}
+		
 		for ($t = 9; $t < 11; $t++) {
 			for ($d = 0, $c = 0; $c < $t; $c++) {
 				$d += $cpf[$c] * (($t + 1) - $c);
 			}
 			$d = ((10 * $d) % 11) % 10;
 			if ($cpf[$c] != $d) {
-				return 'Codigo verificador errado';
+				return false;
 			}
 		}
-		return $cpf;
+		return true;
 	}
 
-	function valdidateEmail($email){
+	function validateEmail($email){
 		$email = validate($email);
+
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return false;
         }
@@ -60,14 +67,16 @@
 
 	function validateName($name){
 		$name = validate($name);
+
         if (!preg_match('/^[a-zA-Z0-9\s]+$/', $name)) {
             return false;
         }
         return true;
     }
 
-	function valdidatePassword($password){
+	function validatePassword($password){
 		$password = validate($password);
+
         if (strlen($password) < 6) {
             return false;
         }
@@ -83,8 +92,11 @@
 	 * @return array|null ['ddi' => 'string', 'ddd' => string , 'number' => 'string']
 	 */
 	function brazilianPhoneParser(string $phoneString, bool $forceOnlyNumber = true) : ?array{
+		
 		$phoneString = validate($phoneString);
+
 		$phoneString = preg_replace('/[()]/', '', $phoneString);
+
 		if (preg_match('/^(?:(?:\+|00)?(55)\s?)?(?:\(?([0-0]?[0-9]{1}[0-9]{1})\)?\s?)??(?:((?:9\d|[2-9])\d{3}\-?\d{4}))$/', $phoneString, $matches) === false){
 			return null;
 		}

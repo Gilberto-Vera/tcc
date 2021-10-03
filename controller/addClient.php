@@ -8,11 +8,10 @@
             unset($_POST['endereco']);
             unset($_POST['confirmaSenha']);
             $data[] = $_POST;
-            $is_inserted = insert_client($conn, $data);
-            include('view/content/addClient.php');
+            // $is_inserted = insert_client($conn, $data);
+            // include('view/content/addClient.php');
         }
-    }else{
-        include('view/content/addClient.php');
     }
+    include('view/content/addClient.php');
     
 ?>

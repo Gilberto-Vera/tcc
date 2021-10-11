@@ -4,8 +4,6 @@
 	}
 
 	function validateCNPJ($cnpj){
-		$cnpj = validate($cnpj);
-
 		$cnpj = preg_replace('/[^0-9]/', '', (string) $cnpj);
 
 		if (strlen($cnpj) != 14)
@@ -32,8 +30,6 @@
 	}
 
 	function validateCPF($cpf) {
-		$cpf = validate($cpf);
-
 		$cpf = preg_replace( '/[^0-9]/is', '', $cpf );
 
 		if (strlen($cpf) != 11) {
@@ -57,8 +53,6 @@
 	}
 
 	function validateEmail($email){
-		$email = validate($email);
-
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return false;
         }
@@ -66,8 +60,6 @@
     }
 
 	function validateName($name){
-		$name = validate($name);
-
         if (!preg_match('/^[a-zA-Z0-9\s]+$/', $name)) {
             return false;
         }
@@ -75,8 +67,6 @@
     }
 
 	function validatePassword($password){
-		$password = validate($password);
-
         if (strlen($password) < 6) {
             return false;
         }
@@ -92,7 +82,6 @@
 	 * @return array|null ['ddi' => 'string', 'ddd' => string , 'number' => 'string']
 	 */
 	function brazilianPhoneParser(string $phoneString, bool $forceOnlyNumber = true) : ?array{
-		
 		$phoneString = validate($phoneString);
 
 		$phoneString = preg_replace('/[()]/', '', $phoneString);

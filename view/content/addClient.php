@@ -18,52 +18,53 @@
                                 <div class="card-title text-center">
                                     <h1 class="h4 text-gray-900 p-1">Cadastro de cliente</h1>
                                 </div>
-                                <form class="user needs-validation" action="" method="POST">
+                                <form class="user needs-validation" action="index.php?control=addClient&add" name="f1" method="POST">
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user" id="name"
-                                            placeholder="Nome">
-                                            <div class="invalid-feedback" id="feedbackName"></div>
+                                            name="nome" placeholder="Nome">
+                                            <div class="invalid-feedback" id="feedback_name"></div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
                                             <input type="text" class="form-control form-control-user" id="cpf"
-                                                placeholder="CPF">
-                                                <div class="invalid-feedback" id="feedbackCPF"></div>
+                                                name="cpf" placeholder="CPF">
+                                                <div class="invalid-feedback" id="feedback_cpf"></div>
                                         </div>
                                         <div class="col-sm-6">
                                             <input type="text" class="form-control form-control-user" id="phone"
-                                                placeholder="Telefone">
-                                                <div class="invalid-feedback" id="feedbackPhone"></div>
+                                                name="telefone" placeholder="Telefone">
+                                                <div class="invalid-feedback" id="feedback_phone"></div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user" id="address"
-                                            placeholder="Endereço">
-                                                <div class="invalid-feedback" id="feedbackAddress"></div>
+                                            name="endereco" placeholder="Endereço">
+                                                <div class="invalid-feedback" id="feedback_address"></div>
                                     </div>
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user" id="email"
-                                            placeholder="Email">
-                                                <div class="invalid-feedback" id="feedbackEmail"></div>
+                                            name="email" placeholder="Email">
+                                                <div class="invalid-feedback" id="feedback_email"></div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
                                             <input type="password" class="form-control form-control-user" id="password"
-                                             placeholder="Senha">
-                                                <div class="invalid-feedback" id="feedbackPassword"></div>
+                                             placeholder="Senha" autocomplete="on">
+                                             <div class="invalid-feedback" id="feedback_password"></div>
                                         </div>
+                                        <input type="hidden" id="hash_password" name="senha" value="sei la">
                                         <div class="col-sm-6">
                                             <input type="password" class="form-control form-control-user" id="confirmPassword"
-                                             placeholder="Confirmar Senha">
-                                                <div class="invalid-feedback" id="feedbackConfirmPassword"></div>
+                                             placeholder="Confirmar Senha" autocomplete="on">
+                                                <div class="invalid-feedback" id="feedback_confirmPassword"></div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <button class="btn btn-primary btn-user" type="reset">Limpar</button>
+                                            <button class="btn btn-primary btn-user" type="button" id="clear_client">Limpar</button>
                                         </div>
                                         <div class="col text-right">
-                                            <button class="btn btn-primary btn-user" type="button" id="saveClient">Salvar</button>
+                                            <button class="btn btn-primary btn-user" type="submit" id="save_client">Salvar</button>
                                         </div>
                                     </div>
                                 </form>

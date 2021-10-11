@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS "pessoa" (
   "id" SERIAL NOT NULL,
   "nome" VARCHAR(100) NOT NULL,
   "email" VARCHAR(45) NOT NULL,
-  "senha" VARCHAR(45) NOT NULL,
+  "senha" VARCHAR(80) NOT NULL,
   PRIMARY KEY ("id"))
 ;
 

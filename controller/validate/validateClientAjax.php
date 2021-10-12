@@ -5,11 +5,9 @@
 	$error = false;
 	$message_error = 'O Sistema não está disponível';
 	if($_POST['name'] == ""){
-		$error = false;
 		$message_error = 'Insira um nome...';
 	}else{
 		if(!validateName($_POST['name'])){
-			$error = false;
 			$message_error = 'Use somente letras, números e espaço...';
 		}else{
 			$name = validate($_POST['name']);
@@ -19,12 +17,11 @@
 	}
 	$json['name'] = array('error'=>$error, 'message'=>$message_error, 'name'=>$name);
 
+	$error = false;
 	if($_POST['cpf'] == ""){
-		$error = false;
 		$message_error = 'Insira um CPF...';
 	}else{
 		if(!validateCPF($_POST['cpf'])){
-			$error = false;
 			$message_error = 'CPF inválido...';
 		}else{
 			$cpf = $_POST['cpf'];
@@ -35,8 +32,8 @@
 	}
 	$json['cpf'] = array('error'=>$error, 'message'=>$message_error, 'cpf'=>$cpf);
 
+	$error = false;
 	if($_POST['phone'] == ""){
-		$error = false;
 		$message_error = 'Insira um telefone...';
 	}else{
 		$phone = $_POST['phone'];
@@ -46,8 +43,8 @@
 	}
 	$json['phone'] = array('error'=>$error, 'message'=>$message_error, 'phone'=>$phone);
 
+	$error = false;
 	if($_POST['address'] == ""){
-		$error = false;
 		$message_error = 'Insira um endereço...';
 	}else{
 		$address = validate($_POST['address']);
@@ -56,18 +53,16 @@
 	}
 	$json['address'] = array('error'=>$error, 'message'=>$message_error, 'address'=>$address);
 	
+	$error = false;
 	if($_POST['email'] == ""){
-		$error = false;
 		$message_error = 'Insira um email...';
 	}else{
 		if(!validateEmail($_POST['email'])){
-			$error = false;
 			$message_error = 'Email inválido...';
 		}else{
 			$email = validate($_POST['email']);
 			$res = verifyEmail($email, $conn);
 			if(pg_num_rows($res)>0){
-				$error=false;
 				$message_error='Email já cadastrado...';
 			}else{
 				$error = true;
@@ -77,12 +72,11 @@
 	}
 	$json['email'] = array('error'=>$error, 'message'=>$message_error, 'email'=>$email);
 
+	$error = false;
 	if($_POST['password'] == ""){
-		$error = false;
 		$message_error = 'Insira uma senha...';
 	}else{
 		if(!validatePassword($_POST['password'])){
-			$error = false;
 			$message_error = 'A senha deve ter pelo menos 6 caracteres...';
 		}else{
 			$password = validate($_POST['password']);
@@ -92,12 +86,11 @@
 	}
 	$json['password'] = array('error'=>$error, 'message'=>$message_error, 'password'=>$password);
 
+	$error = false;
 	if($_POST['password'] == ""){
-		$error = false;
 		$message_error = 'Insira uma senha...';
 	}else{
 		if($_POST['password'] != $_POST['confirmPassword']){
-			$error = false;
 			$message_error = 'As senhas não são iguais...';
 		}else{
 			$confirmPassword = validate($_POST['confirmPassword']);

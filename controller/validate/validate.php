@@ -86,14 +86,14 @@
 
 		$phoneString = preg_replace('/[()]/', '', $phoneString);
 
-		if (preg_match('/^(?:(?:\+|00)?(55)\s?)?(?:\(?([0-0]?[0-9]{1}[0-9]{1})\)?\s?)??(?:((?:9\d|[2-9])\d{3}\-?\d{4}))$/', $phoneString, $matches) === false){
+		if (preg_match('/^(?:(?:\+|00)?(55)\s?)?(?:\(?([0-0]?[0-9]{1}[0-9]{1})\)?\s?)??(?:((?:9\d|[2-9])\d{3}\-?\d{4}))$/', $phoneString, $matches) == false){
 			return null;
 		}
 
 		$ddi = $matches[1] ?? '';
 		$ddd = preg_replace('/^0/', '', $matches[2] ?? '');
 		$number = $matches[3] ?? '';
-		if ($forceOnlyNumber === true){
+		if ($forceOnlyNumber == true){
 			$number = preg_replace('/-/', '', $number);
 		}
 

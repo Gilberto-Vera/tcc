@@ -1,27 +1,24 @@
 $(document).ready(function(){
-	$("#login").click(function(){
+	$("#login").click(function(event){
 		var username=$('#username').val();
 		var password=$('#password').val();
 		$.ajax({
 			type:"POST",
 			dataType:'json',
 			url:'index.php?control=loginAjax',
-			data:{username:username,password:password},
+			data:{username:username, password:password},
+			async: false,
 			success:function(response){
-				if(response.data==true){
-					window.location.assign('index.php?control=dashboard');
-					// $("#cabecalho").html("Confirmação");
-					// $(".toast").addClass("bg-success");
-					// $(".toast").removeClass("toast-error");
-					// $(".toast-body").html(response.message);
-					// $(".toast").toast("show");
-				}else{
-					// $("#cabecalho").html("Alerta");
-					$(".toast").addClass("toast-error");
-					$(".toast").removeClass("bg-success");
-					$(".toast-body").html(response.message);
-					$(".toast").toast("show");
-				}
+				Object.keys(response).forEach(function(element){
+					if(!response[element].error){
+						$("#" + element).removeClass('is-invalid');
+						$("#" + element).addClass('is-valid');
+					}else{
+						$("#" + element).addClass('is-invalid');
+						$("#feedback_" + element).html(response[element].message);
+						event.preventDefault();
+					}
+				});
 			}
 		});
 	});

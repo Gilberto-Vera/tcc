@@ -1,6 +1,6 @@
 <?php
-    function validationLogin($username, $conn, $password){
-        $res = pg_query($conn,("Select * from pessoa where nome='$username' and senha='$password'"));
+    function validationLogin($conn, $username, $password){
+        $res = pg_query($conn,("SELECT id, nome FROM pessoa WHERE nome='$username' AND senha='$password'"));
         return $res;
     }
 ?>

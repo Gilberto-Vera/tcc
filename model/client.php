@@ -1,8 +1,8 @@
 <?php
   function insert_client($conn, $data){
     //insere os dados na tabela pessoa
-    $sql = "INSERT INTO pessoa (id, nome, email, senha)
-      VALUES (default, '$data[nome]', '$data[email]', '$data[senha]')
+    $sql = "INSERT INTO pessoa (id, nome, email, senha, ativo)
+      VALUES (default, '$data[nome]', '$data[email]', '$data[senha]', TRUE)
       RETURNING id";
       $result = pg_query($conn, $sql);
       if(!$result){
@@ -45,7 +45,8 @@
 
   function getClients($conn) {
     $sql = "SELECT pessoa.id, nome, telefone, email FROM pessoa
-      INNER JOIN telefone_pessoa ON pessoa_id = pessoa.id";
+      INNER JOIN telefone_pessoa ON pessoa_id = pessoa.id
+      WHERE pessoa.ativo = TRUE";
     
     $result = pg_query($conn,$sql);
     if (!$result) {

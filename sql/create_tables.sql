@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS "pessoa" (
   "nome" VARCHAR(100) NOT NULL,
   "email" VARCHAR(45) NOT NULL,
   "senha" VARCHAR(80) NOT NULL,
+  "ativo" BOOLEAN NOT NULL,
   PRIMARY KEY ("id"))
 ;
 
@@ -341,8 +342,8 @@ BEGIN
     -- -----------------------------------------------------
     -- Insert "administrador"
     -- -----------------------------------------------------
-    INSERT INTO pessoa (id, nome, email, senha)
-      VALUES (default, 'admin', 'admin@admin', 'admin');
+    INSERT INTO pessoa (id, nome, email, senha, ativo)
+      VALUES (default, 'admin', 'admin@admin', 'admin', TRUE);
 
     INSERT INTO administrador (id, pessoa_id)
       VALUES (default, 1);
@@ -350,27 +351,27 @@ BEGIN
     -- -----------------------------------------------------
     -- Insert "cliente"
     -- -----------------------------------------------------
-    INSERT INTO pessoa (id, nome, email, senha)
-      VALUES (default, 'Garrett Winters', 'Accountant@seila.com', 63),
-        (default, 'Ashton Cox', 'Author@seila.com', 66),
-        (default, 'Cedric Kelly', 'Developer@seila.com', 22),
-        (default, 'Airi Satou', 'Senior@seila.com', 33),
-        (default, 'Brielle Williamson', 'Williamson@seila.com', 61),
-        (default, 'Herrod Chandler', 'Chandler@seila.com', 59),
-        (default, 'Rhona Davidson', 'Davidson@seila.com', 55),
-        (default, 'Colleen Hurst', 'Hurst@seila.com', 39),
-        (default, 'Sonya Frost', 'Frost@seila.com', 23),
-        (default, 'Jena Gaines', 'Gaines@seila.com', 30),
-        (default, 'Quinn Flynn', 'Flynn@seila.com', 24),
-        (default, 'Charde Marshall', 'Marshall@seila.com', 36),
-        (default, 'Haley Kennedy', 'Kennedy@seila.com', 43),
-        (default, 'Tatyana Fitzpatrick', 'Fitzpatrick@seila.com', 19),
-        (default, 'Michael Silva', 'Silva@seila.com', 66),
-        (default, 'Paul Byrd', 'Byrd@seila.com', 64),
-        (default, 'Gloria Little', 'Little@seila.com', 59),
-        (default, 'Bradley Greer', 'Greer@seila.com', 41),
-        (default, 'Dai Rios', 'Rios@seila.com', 35),
-        (default, 'Tiger Nixon', 'Edinburgh@seila.com', 61)
+    INSERT INTO pessoa (id, nome, email, senha, ativo)
+      VALUES (default, 'Garrett Winters', 'Accountant@seila.com', 63, TRUE),
+        (default, 'Ashton Cox', 'Author@seila.com', 66, TRUE),
+        (default, 'Cedric Kelly', 'Developer@seila.com', 22, TRUE),
+        (default, 'Airi Satou', 'Senior@seila.com', 33, TRUE),
+        (default, 'Brielle Williamson', 'Williamson@seila.com', 61, TRUE),
+        (default, 'Herrod Chandler', 'Chandler@seila.com', 59, TRUE),
+        (default, 'Rhona Davidson', 'Davidson@seila.com', 55, TRUE),
+        (default, 'Colleen Hurst', 'Hurst@seila.com', 39, TRUE),
+        (default, 'Sonya Frost', 'Frost@seila.com', 23, TRUE),
+        (default, 'Jena Gaines', 'Gaines@seila.com', 30, TRUE),
+        (default, 'Quinn Flynn', 'Flynn@seila.com', 24, TRUE),
+        (default, 'Charde Marshall', 'Marshall@seila.com', 36, TRUE),
+        (default, 'Haley Kennedy', 'Kennedy@seila.com', 43, TRUE),
+        (default, 'Tatyana Fitzpatrick', 'Fitzpatrick@seila.com', 19, TRUE),
+        (default, 'Michael Silva', 'Silva@seila.com', 66, TRUE),
+        (default, 'Paul Byrd', 'Byrd@seila.com', 64, TRUE),
+        (default, 'Gloria Little', 'Little@seila.com', 59, TRUE),
+        (default, 'Bradley Greer', 'Greer@seila.com', 41, TRUE),
+        (default, 'Dai Rios', 'Rios@seila.com', 35, TRUE),
+        (default, 'Tiger Nixon', 'Edinburgh@seila.com', 61, TRUE)
     ;
     INSERT INTO cliente (id, pessoa_id, endereco, cpf)
       VALUES (default, 2, 'Garrett Winters Nª50 Accountant Seila', 12345676357),

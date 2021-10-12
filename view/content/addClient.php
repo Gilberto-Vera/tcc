@@ -52,7 +52,7 @@
                                              placeholder="Senha" autocomplete="on">
                                              <div class="invalid-feedback" id="feedback_password"></div>
                                         </div>
-                                        <input type="hidden" id="hash_password" name="senha" value="sei la">
+                                        <input type="hidden" id="hash_password" name="senha">
                                         <div class="col-sm-6">
                                             <input type="password" class="form-control form-control-user" id="confirmPassword"
                                              placeholder="Confirmar Senha" autocomplete="on">

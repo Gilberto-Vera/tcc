@@ -38,7 +38,7 @@
                                                     <i class="fas fa-fw fa-edit"></i></a>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="#=<?php echo $client['id']; ?>"
+                                                    <a href="index.php?control=client&del=<?php echo $client['id']; ?>"
                                                     onclick="return confirm('Você tem certeza que deseja excluir este cliente?')">
                                                     <i class="fas fa-fw fa-eraser"></i></a>
                                                 </td>

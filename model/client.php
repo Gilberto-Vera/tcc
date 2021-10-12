@@ -57,4 +57,19 @@
     
     return $clients;
   }
+
+  function del($conn, $id){
+    $sql = "UPDATE pessoa SET ativo = FALSE
+    WHERE id = '$id'";
+
+    $result = pg_query($conn,$sql);
+    if (!$result) {
+      $del_client = false;
+      echo "Ocorreu um erro.\n";
+      exit;
+    }
+    $del_client = true;
+        
+    return $del_client;
+  }
 ?>

@@ -9,7 +9,19 @@
             $data = $_POST; 
             $is_inserted = insert_client($conn, $data);
         }
+        include('view/content/addClient.php');
     }
-    include('view/content/addClient.php');
     
+    if(isset($_GET['list'])){
+        $clients = getClients($conn);
+        include('view/content/listClient.php');
+    }
+
+    if(isset($_GET['del'])){
+        $id = $_GET['del'];
+        $del_client = del($conn, $id);
+
+        $clients = getClients($conn);
+        include('view/content/listClient.php');
+    }
 ?>

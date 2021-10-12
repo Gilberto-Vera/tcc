@@ -18,7 +18,7 @@
                                 <div class="card-title text-center">
                                     <h1 class="h4 text-gray-900 p-1">Cadastro de cliente</h1>
                                 </div>
-                                <form class="user needs-validation" action="index.php?control=addClient&add" name="f1" method="POST">
+                                <form class="user needs-validation" action="index.php?control=client&add" name="f1" method="POST">
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user" id="name"
                                             name="nome" placeholder="Nome">

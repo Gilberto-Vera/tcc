@@ -44,7 +44,8 @@
   }
 
   function getClients($conn) {
-    $sql = "SELECT * from pessoa";
+    $sql = "SELECT pessoa.id, nome, telefone, email FROM pessoa
+      INNER JOIN telefone_pessoa ON pessoa_id = pessoa.id";
     
     $result = pg_query($conn,$sql);
     if (!$result) {

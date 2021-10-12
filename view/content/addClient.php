@@ -64,7 +64,7 @@
                                             <button class="btn btn-primary btn-user" type="button" id="clear_client">Limpar</button>
                                         </div>
                                         <div class="col text-right">
-                                            <button class="btn btn-primary btn-user" type="submit" id="save_client">Salvar</button>
+                                            <button class="btn btn-success btn-user" type="submit" id="save_client">Salvar</button>
                                         </div>
                                     </div>
                                 </form>

@@ -19,18 +19,29 @@
                                 </div>
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                    <thead>
-                                        <tr>
+                                        <tr class="text-center">
                                             <th>Nome</th>
-                                            <th>email</th>
-                                            <th>Senha</th>
+                                            <th>Telefone</th>
+                                            <th>Email</th>
+                                            <th>Editar</th>
+                                            <th>Apagar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach($clients as $client) { ?>
                                             <tr>
                                                 <td><?php echo $client['nome']; ?></td>
+                                                <td><?php echo $client['telefone']; ?></td>
                                                 <td><?php echo $client['email']; ?></td>
-                                                <td><?php echo $client['senha']; ?></td>
+                                                <td class="text-center">
+                                                    <a href="#=<?php echo $client['id']; ?>">
+                                                    <i class="fas fa-fw fa-edit"></i></a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="#=<?php echo $client['id']; ?>"
+                                                    onclick="return confirm('Você tem certeza que deseja excluir este cliente?')">
+                                                    <i class="fas fa-fw fa-eraser"></i></a>
+                                                </td>
                                             </tr>						
                                         <?php }; ?>
                                     </tbody>

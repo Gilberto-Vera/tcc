@@ -351,8 +351,7 @@ BEGIN
     -- Insert "cliente"
     -- -----------------------------------------------------
     INSERT INTO pessoa (id, nome, email, senha)
-      VALUES (default, 'Tiger Nixon', 'Edinburgh@seila.com', 61),
-        (default, 'Garrett Winters', 'Accountant@seila.com', 63),
+      VALUES (default, 'Garrett Winters', 'Accountant@seila.com', 63),
         (default, 'Ashton Cox', 'Author@seila.com', 66),
         (default, 'Cedric Kelly', 'Developer@seila.com', 22),
         (default, 'Airi Satou', 'Senior@seila.com', 33),
@@ -370,8 +369,54 @@ BEGIN
         (default, 'Paul Byrd', 'Byrd@seila.com', 64),
         (default, 'Gloria Little', 'Little@seila.com', 59),
         (default, 'Bradley Greer', 'Greer@seila.com', 41),
-        (default, 'Dai Rios', 'Rios@seila.com', 35)
+        (default, 'Dai Rios', 'Rios@seila.com', 35),
+        (default, 'Tiger Nixon', 'Edinburgh@seila.com', 61)
     ;
+    INSERT INTO cliente (id, pessoa_id, endereco, cpf)
+      VALUES (default, 2, 'Garrett Winters Nª50 Accountant Seila', 12345676357),
+        (default, 3, 'Ashton Cox Nª513 Author Seila', 68137485666),
+        (default, 4, 'Cedric Kelly Nª134 Developer Seila', 22357135274),
+        (default, 5, 'Airi Satou Nª5 Senior Seila', 55476271933),
+        (default, 6, 'Brielle Williamson Nª183 Williamson Seila', 16781135761),
+        (default, 7, 'Herrod Chandler Nª953 Chandler Seila', 15279665759),
+        (default, 8, 'Rhona Davidson Nª937 Davidson Seila', 51235795165),
+        (default, 9, 'Colleen Hurst Nª509 Hurst Seila', 57495314239),
+        (default, 10, 'Sonya Frost Nª42 Frost Seila', 41357921523),
+        (default, 11, 'Jena Gaines Nª153 Gaines Seila', 30125789461),
+        (default, 12, 'Quinn Flynn Nº183 Flynn Seila', 27495314524),
+        (default, 13, 'Charde Marshall Nº1358 Marshall Seila', 25679186336),
+        (default, 14, 'Haley Kennedy Nº786 Kennedy Seila', 76219438443),
+        (default, 15, 'Tatyana Fitzpatrick Nº275 Fitzpatrick Seila', 19296354891),
+        (default, 16, 'Michael Silva Nº785 Silva Seila', 56348749166),
+        (default, 17, 'Paul Byrd Nº63 Byrd Seila', 64521479863),
+        (default, 18, 'Gloria Little Nº563 Little Seila', 55957419635),
+        (default, 19, 'Bradley Greer Nº93 Greer Seila', 45315749511),
+        (default, 20, 'Dai Rios Nº359 Rios Seila', 35897653154),
+        (default, 21, 'Tiger Nixon Nº635 Edinburgh Seila', 63579421561)
+    ;
+    INSERT INTO telefone_pessoa (id, pessoa_id, telefone, principal, descricao)
+      VALUES (default, 2, 995676357, TRUE, 'celular'),
+        (default, 3, 937485666, TRUE, 'celular'),
+        (default, 4, 957135274, TRUE, 'celular'),
+        (default, 5, 976271933, TRUE, 'celular'),
+        (default, 6, 981135761, TRUE, 'celular'),
+        (default, 7, 979665759, TRUE, 'celular'),
+        (default, 8, 935795165, TRUE, 'celular'),
+        (default, 9, 995314239, TRUE, 'celular'),
+        (default, 10, 957921523, TRUE, 'celular'),
+        (default, 11, 925789461, TRUE, 'celular'),
+        (default, 12, 995314524, TRUE, 'celular'),
+        (default, 13, 979186336, TRUE, 'celular'),
+        (default, 14, 919438443, TRUE, 'celular'),
+        (default, 15, 996354891, TRUE, 'celular'),
+        (default, 16, 948749166, TRUE, 'celular'),
+        (default, 17, 921479863, TRUE, 'celular'),
+        (default, 18, 957419635, TRUE, 'celular'),
+        (default, 19, 915749511, TRUE, 'celular'),
+        (default, 20, 997653154, TRUE, 'celular'),
+        (default, 21, 979421561, TRUE, 'celular')
+    ;
+
   END IF;
 
   IF (SELECT COUNT(*) FROM evento) = 0 THEN

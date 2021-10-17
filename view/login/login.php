@@ -26,7 +26,7 @@
               </div>
               <div class="form-group">
               </div>
-              <button class="btn btn-success btn-user btn-block" type="submit" id="login">Acessar</button>
+              <button class="btn btn-primary btn-user btn-block" type="submit" id="login">Acessar</button>
             </form>
             <hr>
             <!-- <div class="text-center">

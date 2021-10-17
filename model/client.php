@@ -62,6 +62,8 @@
     $sql = "UPDATE pessoa SET ativo = FALSE
     WHERE id = '$id'";
 
+    print_r($id);exit;
+
     $result = pg_query($conn,$sql);
     if (!$result) {
       $del_client = false;
@@ -69,7 +71,27 @@
       exit;
     }
     $del_client = true;
-        
+
     return $del_client;
   }
+
+  function get_edit_clients($conn, $id) {
+    $sql = "SELECT pessoa.id, nome, cpf, telefone, endereco, email, senha FROM pessoa
+      INNER JOIN cliente ON cliente.pessoa_id = pessoa.id
+      INNER JOIN telefone_pessoa ON telefone_pessoa.pessoa_id = pessoa.id
+      WHERE pessoa.id = $id";
+    
+    $result = pg_query($conn,$sql);
+    if (!$result) {
+        echo "Ocorreu um erro.\n";
+        exit;
+    }
+    $client = pg_fetch_row($result);
+    return $client;
+  }
+
+  function verifyEmail($email, $conn){
+    $res = pg_query($conn,("Select * from pessoa where email='$email'"));
+    return $res;
+}
 ?>

@@ -15,7 +15,7 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <div class="card-title text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Lista de cliente</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Listar cliente</h1>
                                 </div>
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                    <thead>
@@ -34,25 +34,43 @@
                                                 <td><?php echo $client['telefone']; ?></td>
                                                 <td><?php echo $client['email']; ?></td>
                                                 <td class="text-center">
-                                                    <a href="#=<?php echo $client['id']; ?>">
+                                                    <a href="index.php?control=client&edit=<?php echo $client['id']; ?>">
                                                     <i class="fas fa-fw fa-edit"></i></a>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="index.php?control=client&del=<?php echo $client['id']; ?>"
-                                                    onclick="return confirm('Você tem certeza que deseja excluir este cliente?')">
+                                                    <a data-toggle="modal" href="index.php?control=edit&<?php echo $client['id']; ?>" data-target="#modal_del">
                                                     <i class="fas fa-fw fa-eraser"></i></a>
+                                                    <input type="hidden" value="<?php echo $client['id']; ?>" id="id"></input>
                                                 </td>
                                             </tr>						
-                                        <?php }; ?>
-                                    </tbody>
-                                </table>
+                                            <?php }; ?>
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
                             </div>
-                        </div>
-
-                    </div>  
+                            <div class="modal fade" id="modal_del" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Remover cliente</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Tem certeza de deseja excluir esse cliente? <?php echo $client['id']; ?>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal" autofocus>Voltar</button>
+                                            <button type="button" class="btn btn-primary" id="excluir">Excluir</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
                 </div>
-            </div>
-
         <?php
             include("view/footer/footer.html");
         ?>

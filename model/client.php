@@ -62,8 +62,6 @@
     $sql = "UPDATE pessoa SET ativo = FALSE
     WHERE id = '$id'";
 
-    print_r($id);exit;
-
     $result = pg_query($conn,$sql);
     if (!$result) {
       $del_client = false;

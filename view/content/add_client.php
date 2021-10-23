@@ -64,7 +64,7 @@
                                             <button class="btn btn-secondary btn-user" type="button" id="clear_client">Limpar</button>
                                         </div>
                                         <div class="col text-right">
-                                            <button class="btn btn-primary btn-user" type="submit" id="save_client">Salvar</button>
+                                            <button class="btn btn-primary btn-user" type="submit" id="save_add_client">Salvar</button>
                                         </div>
                                     </div>
                                 </form>
@@ -81,4 +81,20 @@
 
 <?php
   include("view/imports/importSidebar.html");
-?>
+  ?>
+
+<script type="text/javascript" src="js/validate_add_client.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#clear_client").click(function(){
+            const fields = ['name', 'cpf', 'phone', 'address', 'email', 'password', 'confirmPassword'];
+            fields.forEach(function(element){
+                    $("#" + element).removeClass('is-invalid');
+                    $("#" + element).removeClass('is-valid');
+                    $("#" + element).val('');
+                    $("#feedback_" + element).html('');
+            });
+        });
+    });
+</script>

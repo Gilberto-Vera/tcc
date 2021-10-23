@@ -43,7 +43,7 @@
     return $is_inserted;
   }
 
-  function getClients($conn) {
+  function list_clients($conn) {
     $sql = "SELECT pessoa.id, nome, telefone, email FROM pessoa
       INNER JOIN telefone_pessoa ON pessoa_id = pessoa.id
       WHERE pessoa.ativo = TRUE";
@@ -58,7 +58,7 @@
     return $clients;
   }
 
-  function del($conn, $id){
+  function del_client($conn, $id){
     $sql = "UPDATE pessoa SET ativo = FALSE
     WHERE id = '$id'";
 
@@ -73,7 +73,7 @@
     return $del_client;
   }
 
-  function get_edit_clients($conn, $id) {
+  function edit_clients($conn, $id) {
     $sql = "SELECT pessoa.id, nome, cpf, telefone, endereco, email, senha FROM pessoa
       INNER JOIN cliente ON cliente.pessoa_id = pessoa.id
       INNER JOIN telefone_pessoa ON telefone_pessoa.pessoa_id = pessoa.id
@@ -88,8 +88,14 @@
     return $client;
   }
 
-  function verifyEmail($email, $conn){
+  function verify_email($conn, $email){
+    $sql = "SELECT * FROM pessoa WHERE email='$email'";
+    $res = pg_query($conn, $sql);
+    return $res;
+  }
+
+  function verify_edit_email($conn, $email, $id_client){
     $res = pg_query($conn,("Select * from pessoa where email='$email'"));
     return $res;
-}
+  }
 ?>

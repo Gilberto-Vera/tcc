@@ -1,8 +1,10 @@
 <?php
-if (isset($_GET['control']) ) {
-	include_once('model/conn.php');
+include_once('model/conn.php');
+
+if (isset($_REQUEST['control']) ) {
+	
 	session_start();
-	require_once('controller/'.$_GET['control'].".php");
+	require_once('controller/'.$_REQUEST['control'].".php");
 	pg_close($conn);
 	
 }else{

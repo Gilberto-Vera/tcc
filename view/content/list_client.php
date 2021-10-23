@@ -24,7 +24,7 @@
                                         <th>Telefone</th>
                                         <th>Email</th>
                                         <th>Editar</th>
-                                        <th>Apagar</th>
+                                        <th>Remover</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,31 +43,31 @@
                                                 <i class="fas fa-fw fa-eraser"></i></a>
                                             </td>
                                         </tr>						
-                                        <?php }; ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="modal fade" id="modal_del" tabindex="-1" aria-labelledby="exampleModalLabel" 
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Remover cliente</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Tem certeza de deseja remover esse cliente?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal" 
-                                                autofocus>Voltar</button>
-                                            <a class="btn btn-primary" id="remove">Excluir</a>
-                                        </div>
+                                    <?php }; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal fade" id="modal_del" tabindex="-1" aria-labelledby="exampleModalLabel" 
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Remover cliente</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Tem certeza de deseja remover este cliente?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" 
+                                            autofocus>Voltar</button>
+                                        <a class="btn btn-primary" id="remove">Excluir</a>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>  
             </div>

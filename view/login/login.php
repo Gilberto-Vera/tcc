@@ -13,7 +13,7 @@
             <div class="text-center">
               <h1 class="h4 text-gray-900 mb-4">Entre, por favor!</h1>
             </div>
-            <form class="user  needs-validation" action="index.php?control=dashboard" method="POST">
+            <form class="user needs-validation" action="" method="POST">
               <div class="form-group">
                   <input type="text" class="form-control form-control-user"
                       id="username" placeholder="Usuário">

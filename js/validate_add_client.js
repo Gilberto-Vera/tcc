@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("#save_client").click(function(event){
+	$("#save_add_client").click(function(event){
 		let name = $('#name').val();
 		let cpf = $('#cpf').val();
 		let phone = $('#phone').val();
@@ -11,7 +11,7 @@ $(document).ready(function(){
 		$.ajax({
 			type:"POST",
 			dataType:'json',
-			url:'index.php?control=client&valid',
+			url:'index.php?control=validate',
 			data:{name:name, cpf:cpf, phone:phone, address:address, email:email, password:password,
 			confirmPassword:confirmPassword, hash_password:hash_password},
 			async: false,
@@ -29,10 +29,11 @@ $(document).ready(function(){
 					}else{
 						$("#" + element).addClass('is-invalid');
 						$("#feedback_" + element).html(response[element].message);
-						event.preventDefault();
 					}
 					if($control == 0){
 						window.location.assign("index.php?control=client&add");
+					}else{
+						event.preventDefault();
 					}
 				});
 			}

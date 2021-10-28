@@ -18,7 +18,7 @@
                                 <div class="card-title text-center">
                                     <h1 class="h4 text-gray-900 p-1">Cadastrar cliente</h1>
                                 </div>
-                                <form class="user needs-validation" action="" method="POST">
+                                <form class="user needs-validation" action="" id="f1" method="POST">
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user" id="name"
                                             name="nome" placeholder="Nome">
@@ -42,7 +42,7 @@
                                                 <div class="invalid-feedback" id="feedback_address"></div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control form-control-user" id="email"
+                                        <input type="text" class="form-control form-control-user" id="email"
                                             name="email" placeholder="Email">
                                                 <div class="invalid-feedback" id="feedback_email"></div>
                                     </div>

@@ -11,12 +11,12 @@ $(document).ready(function(){
 		$.ajax({
 			type:"POST",
 			dataType:'json',
-			url:'index.php?control=validate',
+			url:'index.php?control=validate_client',
 			data:{name:name, cpf:cpf, phone:phone, address:address, email:email, password:password,
 			confirmPassword:confirmPassword, hash_password:hash_password},
 			async: false,
 			success:function(response){
-				$control = 7;
+				$control = 8;
 				Object.keys(response).forEach(function(element){
 					if (response[element].error){
 						$("#" + element).removeClass('is-invalid');
@@ -30,13 +30,21 @@ $(document).ready(function(){
 						$("#" + element).addClass('is-invalid');
 						$("#feedback_" + element).html(response[element].message);
 					}
-					if($control == 0){
-						window.location.assign("index.php?control=client&add");
-					}else{
-						event.preventDefault();
-					}
 				});
-			}
+			},
+            error:function (response) {
+				console.log(response.responseText);
+				debugger;
+            },
+            complete:function (response) {
+				console.log(response.responseText);
+				if($control == 0){
+					window.location.assign("index.php?control=client&add");
+				}else{
+					event.preventDefault();
+					event.stopPropagation();
+				}
+            }
 		});
 	});
 });

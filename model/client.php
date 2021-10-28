@@ -1,4 +1,5 @@
 <?php
+
   function insert_client($conn, $data){
     //insere os dados na tabela pessoa
     $sql = "INSERT INTO pessoa (id, nome, email, senha, ativo)
@@ -88,14 +89,15 @@
     return $client;
   }
 
-  function verify_email($conn, $email){
+  function verifyEmail($email){
     $sql = "SELECT * FROM pessoa WHERE email='$email'";
-    $res = pg_query($conn, $sql);
-    return $res;
-  }
+    $res = pg_query($sql);
+    
+    if (!$res) {
+      echo "Ocorreu um erro.\n";
+      exit;
+    }
 
-  function verify_edit_email($conn, $email, $id_client){
-    $res = pg_query($conn,("Select * from pessoa where email='$email'"));
     return $res;
   }
 ?>
